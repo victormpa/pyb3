@@ -1,3 +1,4 @@
+from importlib_metadata import entry_points
 import setuptools
 
 with open('README.md', 'r') as file:
@@ -23,5 +24,10 @@ setuptools.setup(
         'License :: OSI Approved :: Apache Software License',
     ],
     packages=setuptools.find_packages(),
-    python_requires='>=3.9'
+    python_requires='>=3.9',
+    entry_points={
+        'console_scripts': [
+            'b3 = pyb3.cli:cli'
+        ]
+    }
 )
